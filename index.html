@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Quiniela</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Calculá tu jugada &#129310</h1>
+        <h2> Es rápido, fácil y gratis!</h2>
+    </header>
+    <main>
+        <div class="contenedor-calculadora">
+            <form id="formulario-quiniela">
+            <div class="seccion-entrada">
+
+                <div class="campo-formulario">
+                <label for="loteria">1.Seleccioná la lotería: </label>
+                <select name="loteria" id="loteria" required>
+                    <option value="" disabled selected>Elegí la lotería deseada</option>
+                    <option value="caba">Lotería de la Ciudad - CABA (Ex quiniela Nacional)</option>
+                    <option value="bsas">Lotería de la Provincia de Bs As</option>
+                    <option value="santa-fe">Lotería de Santa Fe</option>
+                    <option value="cordoba">Lotería de Córdoba</option>
+                    <option value="entre-rios">Lotería de Entre Rios</option>
+                    <option value="corrientes">Lotería de Corrientes</option>
+                    <option value="otras">Otras</option>
+                </select>
+                </div>
+                <div class="campo-formulario">
+                <label for="cifras">2.Cuántas cifras jugaste o querés jugar?</label>
+                <select name="cifras" id="cifras" required>
+                    <option value="" disabled selected>Elegí la cantidad de cifras</option>
+                     <option value="1">1 Cifra</option>
+                     <option value="2">2 Cifras</option>
+                     <option value="3">3 Cifras</option>
+                     <option value="4">4 Cifras</option>
+                     <option value="5">5 Cifras</option>
+                 </select>
+                </div>
+                <div class="campo-formulario">
+                    <label for="apuesta">3.Cuánto dinero apostaste/querés apostar? ($): </label>
+                    <input type="number" id="apuesta" name="apuesta" min="1" step="any" placeholder="Ej 1000" required>
+
+                </div>
+                <div class="campo-formulario">
+                    <label for="posicion">4.A qué posición jugaste/querés jugar?</label>
+                    <input type="number" id="posicion" name="posicion" min="1" max="20" placeholder="Ej: 1 (Cabeza), 5, 10 o 20 (Según Lotería)" required >
+                </div>
+            </div>
+            <div class="botonera-inicio">
+                <button type="submit" id="boton-calcular">Calcular premio &#128181;</button>
+            </div>
+            </form>
+
+            <div id="contenedor-resultado" class="resultado-oculto">
+                <h3>Premio estimado: </h3>  
+                <p id="valor-premio">$ 0.00</p>
+                <small id="detalle-calculo">Valor aproximado (incluye deducciones nacionales vigentes).</small>  
+            </div>
+
+        </div>
+    </main>
+
+
+     <footer>
+            <p> &copy; Proyecto estudiantil 2026</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

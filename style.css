@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f4f4f9; 
+    color: #333;
+    line-height: 1.6;
+}
+
+.contenedor-calculadora{
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px x rgba(0, 0, 0, 1);
+}
+header, footer{
+    text-align: center;
+    padding: 10px;
+}
+header h1{
+    color: #2c3e50 ;
+    margin-bottom: 5px;
+}
+header h2{
+    color: #7f8c8d;
+    font-width: normal;
+    font-size: 1.1rem;
+}
+footer p{
+    font-size: 0.9 rem;
+    color: #95a5a6;
+}
+.campo-formulario{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.campo-formulario label {
+    font-size: 1.1rem;    
+    font-weight: 500;       
+    color: #2c3e50;      
+    margin-bottom: 2px;    
+}
+select, input{
+    padding: 5px;
+    border: 1px solid #c4c7c4;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+}
+select:invalid{
+    color: #999;
+}
+select option{
+    color: #333;
+}
+.botonera-inicio{
+    margin-top: 30px;
+    text-align: center;
+}
+#boton-calcular{
+    background-color: #27ae60;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer ;
+    transition: background 0.2s ease;
+    width: 100%;
+}
+#boton-calcular:hover {
+    background-color: #219150; 
+    transform: translateY(-3px); 
+}
+#boton-calcular:active {
+    transform: translateY(0); 
+}
+
+#contenedor-resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fffdf0; 
+    border-left: 5px solid #d4af37; 
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease; 
+}
+
+
+#contenedor-resultado h3 {
+    font-size: 1rem;
+    color: #5d6d7e;
+    text-transform: uppercase; 
+    margin-bottom: 10px;
+}
+
+
+#valor-premio {
+    font-size: 2.8rem;      
+    font-weight: 900;       
+    color: #27ae60;         
+    margin: 5px 0;
+}
+
+
+#detalle-calculo {
+    display: block;         
+    margin-top: 20px;       
+    color: #7f8c8d;         
+    font-size: 0.8rem;      
+    line-height: 1.2;       
+    max-width: 100%;         
+    margin-left: auto;      
+    margin-right: auto;
+}
+@keyframes aparecerRebote {
+    0% { transform: scale(0.5); opacity: 0; }
+    70% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+.animar-resultado {
+    animation: aparecerRebote 0.4s ease-out;
+}

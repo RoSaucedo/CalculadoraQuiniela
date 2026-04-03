@@ -5,6 +5,7 @@ const textoPremio = document.getElementById('valor-premio');
 formulario.addEventListener('submit', function(evento) {
     evento.preventDefault();
 
+     document.activeElement.blur();
    
     const loteria = document.getElementById('loteria').value;
     const montoApostado = parseFloat(document.getElementById('apuesta').value);

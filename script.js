@@ -38,18 +38,18 @@ formulario.addEventListener('submit', function(evento) {
     let premioBruto = (montoApostado / posicion) * multiplicador;
 
   
-    let beneficioNeto = premioBruto - montoApostado;
-    let premioFinal = premioBruto;
+   // let beneficioNeto = premioBruto - montoApostado;
+    //let premioFinal = premioBruto;
 
 
-    if (beneficioNeto > 50000) {
+   /* if (beneficioNeto > 50000) {
         let retencion = beneficioNeto * 0.279; // Retención efectiva 27,9%
         premioFinal = premioBruto - retencion;
-    }
+    }*/
 
    
     contenedorResultado.classList.remove('resultado-oculto');
-    textoPremio.innerText = `$ ${premioFinal.toLocaleString('es-AR', {
+    textoPremio.innerText = `$ ${premioBruto.toLocaleString('es-AR', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     })}`;
@@ -60,7 +60,7 @@ formulario.addEventListener('submit', function(evento) {
     contenedorResultado.classList.add('animar-resultado');
 
   
-    if (premioFinal > 0) {
+    if (premioBruto > 0) {
         confetti({
             particleCount: 150,
             spread: 70,

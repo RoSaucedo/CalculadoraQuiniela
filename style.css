@@ -11,6 +11,33 @@ body {
     line-height: 1.6;
 }
 
+/*modo claro*/
+:root {
+    --fondo: #ffffff;
+    --texto: #333333;
+    --tarjeta: #f4f4f4;
+    --primario: #28a745; /* El verde de siempre */
+}
+
+/*Modo Oscuro*/ 
+
+[data-theme="dark"] {
+    --fondo: #121212; /* Fondo oscuro */
+    --texto: #ffffff; /* Texto blanco */
+}   
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: var(--fondo); /* <--- Usa la variable */
+    color: var(--texto);           /* <--- Usa la variable */
+    line-height: 1.6;
+    transition: 0.3s; /* Para que el cambio no sea un "fogonazo" */
+}
+
+.tu-clase-de-tarjeta {
+    background-color: var(--tarjeta);
+}
+
 .contenedor-calculadora{
     max-width: 500px;
     margin: 20px auto;
@@ -130,3 +157,7 @@ select option{
 .animar-resultado {
     animation: aparecerRebote 0.4s ease-out;
 }
+
+
+
+

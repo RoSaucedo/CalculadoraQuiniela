@@ -2,6 +2,19 @@ const formulario = document.getElementById('formulario-quiniela');
 const contenedorResultado = document.getElementById('contenedor-resultado');
 const textoPremio = document.getElementById('valor-premio');
 
+const botonOscuro = document.getElementById('boton-oscuro');
+
+    botonOscuro.addEventListener('click', () => {
+    // Si tiene el atributo dark, lo saca; si no lo tiene, lo pone
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        botonOscuro.innerText = "🌙 Modo Oscuro";
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        botonOscuro.innerText = "☀️ Modo Claro";
+    }
+    });
+    
 formulario.addEventListener('submit', function(evento) {
     evento.preventDefault();
 
@@ -14,7 +27,7 @@ formulario.addEventListener('submit', function(evento) {
     const loteriasFlexibles = ['santa-fe', 'entre-rios', 'corrientes'];
     const posicionesPermitidasEstandar = [1, 5, 10, 20];
 
-    
+       
     if (loteria === 'santa-fe' && cifras === 5) {
         alert("La Lotería de Santa Fe no permite apuestas a 5 cifras en la quiniela tradicional.");
         return;
@@ -70,4 +83,6 @@ formulario.addEventListener('submit', function(evento) {
     }
 
     contenedorResultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+     
 });

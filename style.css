@@ -4,55 +4,52 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #f4f4f9; 
-    color: #333;
-    line-height: 1.6;
-}
 
-/*modo claro*/
 :root {
-    --fondo: #ffffff;
-    --texto: #333333;
-    --tarjeta: #f4f4f4;
-    --primario: #28a745; /* El verde de siempre */
+    --fondo: #f4f4f9;
+    --texto-titulos: #555555; /* Gris oscuro para modo claro */
+    --texto-inputs: #333333;
+    --input-bg: #ffffff;
+    --input-borde: #cccccc;
 }
-
-/*Modo Oscuro*/ 
 
 [data-theme="dark"] {
-    --fondo: #121212; /* Fondo oscuro */
-    --texto: #ffffff; /* Texto blanco */
-}   
-
+    --fondo: #121212;
+    --texto-titulos: #aaaaaa; /* Gris claro para modo oscuro (no blanco) */
+    --texto-inputs: #eeeeee;
+    --input-bg: #2a2a2a;      /* Gris oscuro para el fondo del input */
+    --input-borde: #444444;
+}
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: var(--fondo); /* <--- Usa la variable */
-    color: var(--texto);           /* <--- Usa la variable */
+    background-color: var(--fondo) !important;
+    color: var(--texto-titulos);
     line-height: 1.6;
-    transition: 0.3s; /* Para que el cambio no sea un "fogonazo" */
+    min-height: 100vh;
+    transition: 0.5s;
 }
 
 .tu-clase-de-tarjeta {
     background-color: var(--tarjeta);
 }
 
-.contenedor-calculadora{
+.contenedor-calculadora {
     max-width: 500px;
-    margin: 20px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px x rgba(0, 0, 0, 1);
+    margin: 5px auto !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
+
 header, footer{
+    padding-top: 30px !important;
     text-align: center;
-    padding: 10px;
+    padding: 2 px;
 }
 header h1{
     color: #2c3e50 ;
     margin-bottom: 5px;
+  
 }
 header h2{
     color: #7f8c8d;
@@ -63,25 +60,23 @@ footer p{
     font-size: 0.9 rem;
     color: #95a5a6;
 }
-.campo-formulario{
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
 .campo-formulario label {
     font-size: 1.1rem;    
-    font-weight: 500;       
-    color: #2c3e50;      
-    margin-bottom: 2px;    
+    font-weight: 600;      
+    color: var(--texto-titulos); /* Gris que cambia solo */
+    margin-bottom: 5px;    
 }
-select, input{
-    padding: 5px;
-    border: 1px solid #c4c7c4;
-    border-radius: 6px;
-    font-size: 1rem;
+
+select, input {
+    padding: 12px;
+    background-color: var(--input-bg) !important; 
+    color: var(--texto-inputs) !important;
+    border: 1px solid var(--input-borde) !important;
+    border-radius: 10px;
     width: 100%;
+    outline: none;
 }
+
 select:invalid{
     color: #999;
 }
@@ -113,29 +108,35 @@ select option{
 }
 
 #contenedor-resultado {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #fffdf0; 
-    border-left: 5px solid #d4af37; 
-    border-radius: 8px;
+    margin-top: 20px;
+    padding: 20px 20px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    transition: all 0.3s ease; 
+    border-radius: 15px;
+    transition: all 0.3s ease;
+
+    /* EFECTO VIDRIO  */
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-
 #contenedor-resultado h3 {
-    font-size: 1rem;
-    color: #5d6d7e;
-    text-transform: uppercase; 
+    color: var(--texto-titulos); /* Gris suave dinámico */
+    font-size: 0.9rem;
+    text-transform: uppercase;
     margin-bottom: 10px;
 }
 
-
 #valor-premio {
-    font-size: 2.8rem;      
-    font-weight: 900;       
-    color: #27ae60;         
-    margin: 5px 0;
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #27ae60; /* Mantenemos el verde del premio */
+    text-shadow: 0 2px 10px rgba(39, 174, 96, 0.3);
 }
 
 
@@ -158,6 +159,15 @@ select option{
     animation: aparecerRebote 0.4s ease-out;
 }
 
-
-
+#formulario-quiniela {
+    background: rgba(255, 255, 255, 0.05) !important; 
+    backdrop-filter: blur(15px) !important; 
+    -webkit-backdrop-filter: blur(15px) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.2) !important; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    border-radius: 20px !important;
+    padding: 30px;
+    max-width: 400px;
+    margin: 20px auto ;
+}
 

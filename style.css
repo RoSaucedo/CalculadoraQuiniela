@@ -20,6 +20,15 @@
     --input-bg: #2a2a2a;      /* Gris oscuro para el fondo del input */
     --input-borde: #444444;
 }
+[data-theme="dark"] select option {
+    background-color: #2a2a2a !important; 
+    color: #eeeeee !important;           /* Texto claro */
+}
+
+select:focus {
+    border-color: #27ae60 !important;
+    box-shadow: 0 0 8px rgba(39, 174, 96, 0.4);
+}
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: var(--fondo) !important;

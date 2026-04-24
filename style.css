@@ -75,6 +75,7 @@ select, input {
     border-radius: 10px;
     width: 100%;
     outline: none;
+    font-size: 16px;
 }
 
 select:invalid{

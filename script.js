@@ -82,7 +82,20 @@ formulario.addEventListener('submit', function(evento) {
         });
     }
 
-    contenedorResultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+       setTimeout(() => {
+        contenedorResultado.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        });
 
-     
+    
+        const viewport = document.querySelector('meta[name="viewport"]');
+        viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0');
+        
+    
+        setTimeout(() => {
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+        }, 1000);
+
+    }, 150); 
 });
